@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include<string.h>
+
+int size(char *p)
+{
+	int x=0;
+	while(p[x]!='\0')
+	{
+		x++;
+	}
+	return x;
+}
+void reverse(char *p)
+{
+	int tam= size(p);
+	char aux[tam+1];
+	char a;
+	int i=0;
+	for(i;i<(tam+1);i++)
+	{
+		aux[i]=p[tam-i];
+	}
+	for(i=0;i<(tam+1);i++)
+	{
+		p[i]=aux[i];
+	}
+	p[i+1]='\0';
+}
+
+char *strrev(char *str)
+{
+      char *p1, *p2;
+      
+            if (! str || ! *str)
+                        return str;
+                              for (p1 = str, p2 = str + strlen(str) - 1; p2 > p1; ++p1, --p2)
+                                    {
+                                                *p1 ^= *p2;
+                                                            *p2 ^= *p1;
+                                                                        *p1 ^= *p2;
+                                                                              }
+                                                                                    return str;
+                                                                                    }
+void shiftLeft(char *p,int spaces)
+{
+	*p+spaces;
+}
+void main()
+{
+	char palavra[55];
+	printf("\nDigite a palavra para encriptar:");
+	scanf("%s",palavra);
+	printf("Palavra:%s",palavra);
+	strrev(palavra);
+	printf("\nReversed:%s",palavra);
+}
